@@ -23,6 +23,13 @@ function mooveToModal(event) {
   `);
 
   instance.show();
+
+  window.addEventListener("keyup", (event) => {
+    if (event.code === "Escape") {
+      instance.close();
+      window.removeEventListener("keyup");
+    }
+  });
   //   console.log(newHref);
 }
 
